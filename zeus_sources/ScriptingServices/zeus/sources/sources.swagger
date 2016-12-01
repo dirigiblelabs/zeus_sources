@@ -1,0 +1,209 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.0",
+        "title": "Zeus_sources Entity Service",
+        "description":"This is a RESTful web service for listing, viewing and managing entities of the type 'Zeus_sources'"
+    },
+    "basePath":"/services",
+    "tags":[
+      {
+         "name":"Zeus_sources",
+         "description":"View and manage Zeus_sources objects"
+      }
+    ],
+    "paths": {
+        "/js/zeus_sources/sources.js": {
+            "get": {
+            	"tags":[
+               		"Zeus_sources"
+            	],
+                "description": "Gets 'Zeus_sources' objects.\n",
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "Count of all the records",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "scm_id",
+                        "in": "query",
+                        "description": "Identifier of the 'Zeus_sources' object",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "metadata",
+                        "in": "query",
+                        "description": "Metadata of the 'Zeus_sources' object",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit of the objects list",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset of the objects list",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort parameter",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "description": "Descending order",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Zeus_sources"
+                        }
+                    }
+                }
+            },
+            "post": {
+            	"tags":[
+               		"Zeus_sources"
+            	],
+                "description": "Creates a new 'Zeus_sources' object.\n",
+                "consumes":[
+	               "application/json"
+	            ],
+	            "produces":[
+	               "plain/text"
+	            ],
+	            "parameters":[
+	               {
+	                  "in":"body",
+	                  "name":"body",
+	                  "description":"Zeus_sources object that needs to be added",
+	                  "required":true,
+	                  "schema":{
+	                     "$ref":"#/definitions/Zeus_sources"
+	                  }
+	               }
+	            ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Zeus_sources"
+                        }
+                    }
+                }
+            },
+            "put": {
+            	"tags":[
+               		"Zeus_sources"
+            	],
+                "description": "Updates an existing 'Zeus_sources' object.\n",
+                "consumes":[
+	               "application/json"
+	            ],
+	            "produces":[
+	               "plain/text"
+	            ],
+	            "parameters":[
+	               {
+	                  "in":"body",
+	                  "name":"body",
+	                  "description":"Zeus_sources object that needs to be added",
+	                  "required":true,
+	                  "schema":{
+	                     "$ref":"#/definitions/Zeus_sources"
+	                  }
+	               }
+	            ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Zeus_sources"
+                        }
+                    }
+                }
+            },
+            "delete": {
+            	"tags":[
+               		"Zeus_sources"
+            	],
+                "description": "Deletes 'Zeus_sources' objects.\n",
+                "parameters": [
+                    {
+                        "name": "scm_id",
+                        "in": "query",
+                        "description": "Identifier of the 'Zeus_sources' object",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Zeus_sources"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions":{
+        "Zeus_sources": {
+	        "type":"object",
+	        "properties": {
+        		"scm_id": {
+	            	"type": 
+        "integer"
+	    		}
+				,
+        		"scm_name": {
+	            	"type": 
+        "string"
+	    		}
+				,
+        		"scm_url": {
+	            	"type": 
+        "string"
+	    		}
+				,
+        		"scm_project_id": {
+	            	"type": 
+        "integer"
+	    		}
+				,
+        		"scm_created_at": {
+	            	"type": 
+        "number"
+	    		}
+				,
+        		"scm_created_by": {
+	            	"type": 
+        "string"
+	    		}
+	        }
+        }
+	}
+}

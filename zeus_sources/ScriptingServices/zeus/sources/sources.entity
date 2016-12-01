@@ -1,0 +1,15 @@
+{
+  "entityName":"Zeus_sources",
+  "tableName":"ZEUS_SOURCES",
+  "tableType":"TABLE",
+  "serviceName":"sources.js",
+  "libraryName":"sources_lib.js",
+  "specification":"sources.swagger",
+  "getEnabled":"true",
+  "postEnabled":"true",
+  "putEnabled":"true",
+  "deleteEnabled":"true",
+  "countEnabled":"true",
+  "offsetAndLimitEnabled":"true",
+  "metadataEnabled":"true"
+}
