@@ -37,7 +37,7 @@
 	<div id="wrap" ng-controller="ManageController">
 		<div class="row">
 			<div class="col-lg-12">
-		    	<h1 class="page-header">Source Repositories</h1>
+		    	<h1 class="page-header">Source Code Repositories</h1>
 			</div>
 		</div>
 		<div class="container">
@@ -56,7 +56,7 @@
 						ng-click="showInfoForEntry(entry)">
 						<td nowrap><i class="fa fa-github"></i> {{entry.scm_name}}</td>
 						<td>{{entry.scm_url}}</td>
-						<td>{{entry.scm_project_id}}</td>
+						<td>{{entry.project_name}}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -97,9 +97,12 @@
 						ng-readonly="operation == 'show'" required="required">
 					<br>
 					<label>Project</label>
-					<input type="text" class="form-control" 
+					<input type="hidden" class="form-control" 
 						ng-model="selectedEntry.scm_project_id"
 						ng-readonly="operation == 'show'" required="required">
+					<div>
+						<select ng-model="selectedEntry.scm_project_id" ng-options="option.project_id as option.project_name for option in projects" ng-disabled="operation == 'show'" required="required"></select>	
+					</div>
 					<br>
 				</div>
 				
@@ -124,10 +127,17 @@
 		angular.module('page').controller('ManageController', function ($scope, $http) {
 			
 			var url = '../../../js/zeus/sources/sources.js';
+			var urlView = '../../../js/zeus/sources/sources_view.js';
+			var urlProjects = '../../../js/zeus/projects/projects.js';
 
-			$http.get(url)
+			$http.get(urlView)
 				.success(function(data){
 					$scope.data = data;
+				});
+				
+			$http.get(urlProjects)
+				.success(function(projects){
+					$scope.projects = projects;
 				});
 			
 			$scope.selectedEntry;

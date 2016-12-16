@@ -1,0 +1,118 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.0",
+        "title": "Zeus_sources_view Entity Service",
+        "description":"This is a RESTful web service for listing, viewing and managing entities of the type 'Zeus_sources_view'"
+    },
+    "basePath":"/services",
+    "tags":[
+      {
+         "name":"Zeus_sources_view",
+         "description":"View and manage Zeus_sources_view objects"
+      }
+    ],
+    "paths": {
+        "/js/zeus/sources/sources_view.js": {
+            "get": {
+            	"tags":[
+               		"Zeus_sources_view"
+            	],
+                "description": "Gets 'Zeus_sources_view' objects.\n",
+                "parameters": [
+                    {
+                        "name": "count",
+                        "in": "query",
+                        "description": "Count of all the records",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "${primaryKey.getName().toLowerCase()}",
+                        "in": "query",
+                        "description": "Identifier of the 'Zeus_sources_view' object",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "metadata",
+                        "in": "query",
+                        "description": "Metadata of the 'Zeus_sources_view' object",
+                        "required": false,
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit of the objects list",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset of the objects list",
+                        "required": false,
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Sort parameter",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "desc",
+                        "in": "query",
+                        "description": "Descending order",
+                        "required": false,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "schema":{
+		                     "$ref":"#/definitions/Zeus_sources_view"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions":{
+        "Zeus_sources_view": {
+	        "type":"object",
+	        "properties": {
+        		"scm_id": {
+	            	"type": 
+        "integer"
+	    		}
+				,
+        		"scm_name": {
+	            	"type": 
+        "string"
+	    		}
+				,
+        		"scm_url": {
+	            	"type": 
+        "string"
+	    		}
+				,
+        		"scm_project_id": {
+	            	"type": 
+        "integer"
+	    		}
+				,
+        		"project_name": {
+	            	"type": 
+        "string"
+	    		}
+	        }
+        }
+	}
+}

@@ -1,0 +1,14 @@
+{
+  "tableName":"ZEUS_SOURCES_VIEW",
+  "tableType":"VIEW",
+  "serviceName":"sources_view.js",
+  "libraryName":"sources_view_lib.js",
+  "specification":"sources_view.swagger",
+  "getEnabled":"true",
+  "postEnabled":"false",
+  "putEnabled":"false",
+  "deleteEnabled":"false",
+  "countEnabled":"true",
+  "offsetAndLimitEnabled":"true",
+  "metadataEnabled":"true"
+}
