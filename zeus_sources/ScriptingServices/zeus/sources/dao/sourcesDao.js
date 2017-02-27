@@ -3,7 +3,7 @@
 
 var database = require('db/database');
 var datasource = database.getDatasource();
-var sourcesDaoExtensionsUtils = require('zeus/sources/sourcesDaoExtensionUtils');
+var sourcesDaoExtensionsUtils = require('zeus/sources/utils/sourcesDaoExtensionUtils');
 var user = require("net/http/user");
 
 // Create an entity
@@ -82,14 +82,13 @@ exports.list = function(limit, offset, sort, desc) {
 exports.update = function(entity) {
     var connection = datasource.getConnection();
     try {
-        var sql = 'UPDATE ZEUS_SOURCES SET SCM_NAME = ?,SCM_URL = ?,SCM_PROJECT_ID = ? WHERE SCM_ID = ?';
+        var sql = 'UPDATE ZEUS_SOURCES SET   SCM_NAME = ?, SCM_URL = ?, SCM_PROJECT_ID = ? WHERE SCM_ID = ?';
         var statement = connection.prepareStatement(sql);
         var i = 0;
         statement.setString(++i, entity.scm_name);
         statement.setString(++i, entity.scm_url);
         statement.setInt(++i, entity.scm_project_id);
-        var id = entity.scm_id;
-        statement.setInt(++i, id);
+        statement.setInt(++i, entity.scm_id);
 		sourcesDaoExtensionsUtils.beforeUpdate(connection, entity);
         statement.executeUpdate();
         sourcesDaoExtensionsUtils.afterUpdate(connection, entity);

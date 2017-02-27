@@ -1,0 +1,5 @@
+{
+  "extension":"/zeus/sources/extensions/sourcesExtension",
+  "extension-point":"/zeus/sources/extension_points/sources_database_crud_hooks",
+  "description":"Database CRUD extension for the '/ScriptingServices/zeus/sources/sources.js' service, managing the 'ZEUS_SOURCES' table"
+}

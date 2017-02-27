@@ -1,4 +1,0 @@
-{
-  "extension-point":"/zeus_sources/sources_database_crud_hooks",
-  "description":"Database CRUD hooks for the '/ScriptingServices/zeus_sources/sources.js' service, managing the 'ZEUS_SOURCES' table"
-}

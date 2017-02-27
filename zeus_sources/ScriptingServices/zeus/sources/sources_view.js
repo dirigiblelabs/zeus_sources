@@ -4,7 +4,7 @@
 var request = require('net/http/request');
 var response = require('net/http/response');
 var xss = require('utils/xss');
-var sources_viewDao = require('zeus/sources/sources_viewDao');
+var sources_viewDao = require('zeus/sources/dao/sources_viewDao');
 
 handleRequest(request, response, xss);
 

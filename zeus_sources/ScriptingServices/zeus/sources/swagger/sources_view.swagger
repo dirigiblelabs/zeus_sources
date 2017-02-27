@@ -9,7 +9,7 @@
     "tags":[
       {
          "name":"Zeus_sources_view",
-         "description":"View and manage Zeus_sources_view objects"
+         "description":"View Zeus_sources_view objects"
       }
     ],
     "paths": {
@@ -28,7 +28,7 @@
                         "type": "boolean"
                     },
                     {
-                        "name": "${primaryKey.getName().toLowerCase()}",
+                        "name": "${primaryKey.name.toLowerCase()}",
                         "in": "query",
                         "description": "Identifier of the 'Zeus_sources_view' object",
                         "required": false,
