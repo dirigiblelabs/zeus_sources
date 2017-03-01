@@ -16,6 +16,8 @@ exports.getSidebarItem = function() {
 	return {  
       "name": "Sources",
       "path": PATH,
-      "link": HTML_LINK
+      "link": HTML_LINK,
+      "category": "Develop",
+      "order": 203
    };
 };
